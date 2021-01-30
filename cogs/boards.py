@@ -313,7 +313,7 @@ class Boards(commands.Cog):
                     quest_active = await queries.statboard_quest_active(self.bot.config, area[0])
                     text = f"{text}🔎 **{quest_active[0][0]:,}** {self.bot.locale['quests']}"
                     if "stop_amount" in board['type']:
-                        quest_ratio = int(round((quest_active[0][0] / stop_amount[0][0] * 100), 0))
+                        quest_ratio = (round((quest_active[0][0] / stop_amount[0][0] * 100), 1))
                         text = f"{text} ({quest_ratio}%)"
                     text = text + "\n\n"
 
